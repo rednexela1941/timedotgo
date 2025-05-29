@@ -26,24 +26,16 @@ console.log("Local:", now.Format(format));
 console.log("UTC:", now.UTC().Format(format));
 console.log("California:", california.Format(format));
 console.log("Berlin:", berlin.Format(format));
-
-/* OUTPUT:
- * Right now, it is:
- * Local: Thursday May 29 03:33 PM -04:00:00
- * UTC: Thursday May 29 07:33 PM +00:00:00
- * California: Thursday May 29 12:33 PM -07:00:00
- * Berlin: Thursday May 29 09:33 PM +02:00:00
- */
 ```
 
 ### Output
 
 ```
 Right now, it is:
-Local: Thursday May 29 04:17:30.575 PM -04:00:00
-UTC: Thursday May 29 08:17:30.575 PM +00:00:00
-California: Thursday May 29 01:17:30.575 PM -07:00:00
-Berlin: Thursday May 29 10:17:30.575 PM +02:00:00
+Local: Thursday May 29 04:18:34.227 PM -04:00:00
+UTC: Thursday May 29 08:18:34.227 PM +00:00:00
+California: Thursday May 29 01:18:34.227 PM -07:00:00
+Berlin: Thursday May 29 10:18:34.227 PM +02:00:00
 ```
 
 ## Parsing 
@@ -105,7 +97,7 @@ console.log(
 ### Output
 
 ```
-It has been 1748549850670 milliseconds since the creation of unix.
-And we only have 18115965255 milliseconds until Christmas morning.
+It has been 1748549914319 milliseconds since the creation of unix.
+And we only have 18115901605 milliseconds until Christmas morning.
 ```
 

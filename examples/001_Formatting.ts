@@ -12,11 +12,3 @@ console.log("Local:", now.Format(format));
 console.log("UTC:", now.UTC().Format(format));
 console.log("California:", california.Format(format));
 console.log("Berlin:", berlin.Format(format));
-
-/* OUTPUT:
- * Right now, it is:
- * Local: Thursday May 29 03:33 PM -04:00:00
- * UTC: Thursday May 29 07:33 PM +00:00:00
- * California: Thursday May 29 12:33 PM -07:00:00
- * Berlin: Thursday May 29 09:33 PM +02:00:00
- */
