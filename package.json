@@ -7,6 +7,7 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": ["dist"],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -14,9 +15,9 @@
     }
   },
   "scripts": {
-    "build": "npx tsc && npm docs",
+    "build": "npx tsc && npm run docs",
     "build-test": "node ./build_test.js",
-    "readme": "npm run build-test && ./README.pl > README.md",
+    "readme": "npm run build-test && ./bin/README.pl > README.md",
     "tsc": "npx tsc -w",
     "docs": "npm run readme && npx typedoc",
     "test": "npm run build-test && node --enable-source-maps tests/out/run_all.js"

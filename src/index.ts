@@ -38,4 +38,4 @@ export {
   DateTime,
   DateOnly,
   TimeOnly,
-} from "./Time";
+} from "./Time.js";

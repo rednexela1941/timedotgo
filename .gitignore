@@ -2,3 +2,4 @@ node_modules/
 Notes.txt
 scripts/
 tmp
+*.tgz
