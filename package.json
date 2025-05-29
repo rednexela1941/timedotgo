@@ -14,7 +14,7 @@
     }
   },
   "scripts": {
-    "build": "npx tsc && npx typedoc",
+    "build": "npx tsc && npm docs",
     "build-test": "node ./build_test.js",
     "readme": "npm run build-test && ./README.pl > README.md",
     "tsc": "npx tsc -w",

@@ -10,7 +10,7 @@ print <<HEADER;
 
 Golang's [time](https://pkg.go.dev/time) is excellent. This is a close-as-reasonable port of the API to typescript with full support for time zone conversions, parsing and formatting.
 
-[Documenation](./docs/html/)
+[Documentation](https://rednexela1941.github.io/timedotgo/)
 
 # Installation
 

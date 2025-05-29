@@ -1,7 +1,6 @@
 {
 	"outputs": [
-		{ "name": "json", "path": "./docs/docs.json" },
-		{ "name": "html", "path": "./docs/html" }
-	],
-  "maxTypeConversionDepth": 1
+		{ "name": "json", "path": "./tmp/docs.json" },
+		{ "name": "html", "path": "./docs" }
+	]
 }
