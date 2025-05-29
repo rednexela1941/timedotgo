@@ -1,0 +1,27 @@
+{
+  "name": "timedotgo",
+  "version": "1.0.0",
+  "description": "Golangs excellent \"time\" API ported to typescript.",
+  "license": "MIT",
+  "author": "rednexela1941",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "tsc": "npx tsc -w",
+    "docs": "npx typedoc src/",
+    "test": "node ./build_test.js && node tests/out/time_test.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.5",
+    "prettier": "^3.5.3",
+    "typedoc": "^0.28.5",
+    "typescript": "^5.8.3"
+  }
+}
