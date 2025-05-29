@@ -14,9 +14,12 @@
     }
   },
   "scripts": {
+    "build": "npx tsc && npx typedoc",
+    "build-test": "node ./build_test.js",
+    "readme": "npm run build-test && ./README.pl > README.md",
     "tsc": "npx tsc -w",
-    "docs": "npx typedoc",
-    "test": "node ./build_test.js && node --enable-source-maps tests/out/run_all.js"
+    "docs": "npm run readme && npx typedoc",
+    "test": "npm run build-test && node --enable-source-maps tests/out/run_all.js"
   },
   "devDependencies": {
     "esbuild": "^0.25.5",

@@ -13,25 +13,20 @@ function bytesToSize(bytes) {
 async function main() {
   const BannerString = `gotime ${new Date().getFullYear()}`;
 
-  const PRODUCTION = false;
+  const PRODUCTION = true;
 
   const buildOpts = {
-    entryPoints: [
-      "tests/run_all.ts",
-      "examples/001_Formatting.ts",
-      "examples/002_Parsing.ts",
-      "examples/003_Dates.ts",
-    ],
+    entryPoints: ["dist/index.js"],
     // entryNames: '[dir]/[name]-[hash]',
     bundle: true,
-    minify: PRODUCTION,
+    minify: true,
     platform: "neutral",
-    treeShaking: PRODUCTION,
+    treeShaking: false,
     splitting: false,
-    sourcemap: !PRODUCTION,
+    sourcemap: false,
     format: "esm",
     target: "es2020",
-    outdir: "./tests/out/",
+    outdir: "./out/",
     banner: {
       js: `/** ${BannerString} **/`,
     },

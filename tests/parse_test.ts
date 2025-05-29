@@ -37,9 +37,7 @@ const parseTests = [
   "January _2 03:04 PM MST",
   time.DateOnly,
   time.TimeOnly,
-
   time.DateTime,
-
   time.ANSIC,
   time.UnixDate,
   time.RubyDate,

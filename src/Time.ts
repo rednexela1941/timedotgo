@@ -158,7 +158,7 @@ export const UTC: IANA = "Etc/UTC";
 /**
  * List available locations/IANA names.
  */
-export function AvailableIANAs(): IANA[] {
+export function ListAvailableIANAs(): IANA[] {
   // @ts-ignore
   return Intl.supportedValuesOf("timeZone");
 }
@@ -326,6 +326,21 @@ export function UnixMilli(millis: number): Time {
 }
 
 /**
+ * Since returns the time elapsed since t. It is shorthand for
+ * time.Now().Sub(t).
+ */
+export function Since(t: Time): Duration {
+  return Now().Sub(t);
+}
+
+/**
+ * Until returns the duration until t. It is shorthand for t.Sub(time.Now()).
+ */
+export function Until(t: Time): Duration {
+  return t.Sub(Now());
+}
+
+/**
  * Replicates golangs time.Date(...) function for creating Time objects.
  * note that nanoseconds is replaced with milliseconds for javascript
  * and the name is DateAt (to avoid conflict with JS built-in Date).
@@ -344,11 +359,10 @@ export function DateAt(
 }
 
 /**
- * ParseInLocation is like Parse but differs in two important ways. First,
- * in the absence of time zone information, Parse interprets a time as UTC;
- * ParseInLocation interprets the time as in the given location. Second,
- * when given a zone offset or abbreviation, Parse tries to match it against
- * the Local location; ParseInLocation uses the given location.
+ * ParseInLocation is like Parse but in the absence of time zone information,
+ * Parse interprets a time as UTC and ParseInLocation interprets the time
+ * as in the given location. Unlike go, no attempt is made to match an abbreviation
+ * inside the given timezone. Location should be a valid IANA timezone identifier.
  */
 export function ParseInLocation(
   layout: string,
