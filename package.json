@@ -15,13 +15,14 @@
   },
   "scripts": {
     "tsc": "npx tsc -w",
-    "docs": "npx typedoc src/",
+    "docs": "npx typedoc",
     "test": "node ./build_test.js && node tests/out/time_test.js"
   },
   "devDependencies": {
     "esbuild": "^0.25.5",
     "prettier": "^3.5.3",
     "typedoc": "^0.28.5",
+    "typedoc-plugin-markdown": "^4.6.3",
     "typescript": "^5.8.3"
   }
 }

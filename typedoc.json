@@ -1,0 +1,6 @@
+{
+	"outputs": [
+		{ "name": "json", "path": "./docs/docs.json" },
+		{ "name": "html", "path": "./docs/html" }
+	]
+}

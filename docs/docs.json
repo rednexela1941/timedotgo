@@ -1,0 +1,3686 @@
+{
+	"schemaVersion": "2.0",
+	"id": 0,
+	"name": "timedotgo",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "Month",
+			"variant": "declaration",
+			"kind": 8,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "A Month specifies a month of the year (January = 1, ...)."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 5,
+					"name": "April",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 173,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L173"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 4
+					}
+				},
+				{
+					"id": 9,
+					"name": "August",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 177,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L177"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 8
+					}
+				},
+				{
+					"id": 13,
+					"name": "December",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 181,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L181"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 12
+					}
+				},
+				{
+					"id": 3,
+					"name": "February",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 171,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L171"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 2
+					}
+				},
+				{
+					"id": 2,
+					"name": "January",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 170,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L170"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 1
+					}
+				},
+				{
+					"id": 8,
+					"name": "July",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 176,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L176"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 7
+					}
+				},
+				{
+					"id": 7,
+					"name": "June",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 175,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L175"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 6
+					}
+				},
+				{
+					"id": 4,
+					"name": "March",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 172,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L172"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 3
+					}
+				},
+				{
+					"id": 6,
+					"name": "May",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 174,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L174"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 5
+					}
+				},
+				{
+					"id": 12,
+					"name": "November",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 180,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L180"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 11
+					}
+				},
+				{
+					"id": 11,
+					"name": "October",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 179,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L179"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 10
+					}
+				},
+				{
+					"id": 10,
+					"name": "September",
+					"variant": "declaration",
+					"kind": 16,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 178,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L178"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 9
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumeration Members",
+					"children": [
+						5,
+						9,
+						13,
+						3,
+						2,
+						8,
+						7,
+						4,
+						6,
+						12,
+						11,
+						10
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 169,
+					"character": 12,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L169"
+				}
+			]
+		},
+		{
+			"id": 14,
+			"name": "Time",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "A Time represents an instant in time with millisecond precision."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 75,
+					"name": "Add",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 289,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L289"
+						}
+					],
+					"signatures": [
+						{
+							"id": 76,
+							"name": "Add",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Add returns the time t+d."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 289,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L289"
+								}
+							],
+							"parameters": [
+								{
+									"id": 77,
+									"name": "d",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 14,
+								"name": "Time",
+								"package": "timedotgo"
+							}
+						}
+					]
+				},
+				{
+					"id": 63,
+					"name": "After",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 272,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L272"
+						}
+					],
+					"signatures": [
+						{
+							"id": 64,
+							"name": "After",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "After reports whether the time instant t is after u."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 272,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L272"
+								}
+							],
+							"parameters": [
+								{
+									"id": 65,
+									"name": "u",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"target": 14,
+										"name": "Time",
+										"package": "timedotgo"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 66,
+					"name": "Before",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 276,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L276"
+						}
+					],
+					"signatures": [
+						{
+							"id": 67,
+							"name": "Before",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Before reports whether the time instant t is before u."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 276,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L276"
+								}
+							],
+							"parameters": [
+								{
+									"id": 68,
+									"name": "u",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"target": 14,
+										"name": "Time",
+										"package": "timedotgo"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 18,
+					"name": "Clock",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 196,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L196"
+						}
+					],
+					"signatures": [
+						{
+							"id": 19,
+							"name": "Clock",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Clock returns the hour, minute, and second within the day specified by t."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 196,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L196"
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 20,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"children": [
+										{
+											"id": 21,
+											"name": "hour",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Time.ts",
+													"line": 196,
+													"character": 13,
+													"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L196"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 22,
+											"name": "minute",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Time.ts",
+													"line": 196,
+													"character": 27,
+													"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L196"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 23,
+											"name": "second",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Time.ts",
+													"line": 196,
+													"character": 43,
+													"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L196"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"children": [
+												21,
+												22,
+												23
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Time.ts",
+											"line": 196,
+											"character": 11,
+											"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L196"
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 24,
+					"name": "Date",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 200,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L200"
+						}
+					],
+					"signatures": [
+						{
+							"id": 25,
+							"name": "Date",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Date returns the year, month, and day in which t occurs."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 200,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L200"
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 26,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"children": [
+										{
+											"id": 29,
+											"name": "day",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Time.ts",
+													"line": 200,
+													"character": 40,
+													"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L200"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										},
+										{
+											"id": 28,
+											"name": "month",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Time.ts",
+													"line": 200,
+													"character": 26,
+													"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L200"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": 1,
+												"name": "Month",
+												"package": "timedotgo"
+											}
+										},
+										{
+											"id": 27,
+											"name": "year",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Time.ts",
+													"line": 200,
+													"character": 12,
+													"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L200"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"children": [
+												29,
+												28,
+												27
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Time.ts",
+											"line": 200,
+											"character": 10,
+											"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L200"
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 36,
+					"name": "Day",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 217,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L217"
+						}
+					],
+					"signatures": [
+						{
+							"id": 37,
+							"name": "Day",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Day returns the day of the month specified by t."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 217,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L217"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 69,
+					"name": "Equal",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 281,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L281"
+						}
+					],
+					"signatures": [
+						{
+							"id": 70,
+							"name": "Equal",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Equal reports whether t and u represent the same time instant. Two times\ncan be equal even if they are in different locations. For example, 6:00\n+0200 and 4:00 UTC are Equal."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 281,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L281"
+								}
+							],
+							"parameters": [
+								{
+									"id": 71,
+									"name": "u",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"target": 14,
+										"name": "Time",
+										"package": "timedotgo"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 78,
+					"name": "Format",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 295,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L295"
+						}
+					],
+					"signatures": [
+						{
+							"id": 79,
+							"name": "Format",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Format returns a textual representation of the time value formatted\naccording to the layout defined by the argument. See the documentation for\nthe constant called Layout to see how to represent the layout format."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 295,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L295"
+								}
+							],
+							"parameters": [
+								{
+									"id": 80,
+									"name": "layout",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 38,
+					"name": "Hour",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 221,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L221"
+						}
+					],
+					"signatures": [
+						{
+							"id": 39,
+							"name": "Hour",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Hour returns the hour within the day specified by t, in the range [0, 23]."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 221,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L221"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 15,
+					"name": "In",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 192,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L192"
+						}
+					],
+					"signatures": [
+						{
+							"id": 16,
+							"name": "In",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "In returns a copy of t representing the same time instant, but with the\ncopy's location information set to loc for display purposes."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 192,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L192"
+								}
+							],
+							"parameters": [
+								{
+									"id": 17,
+									"name": "location",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 14,
+								"name": "Time",
+								"package": "timedotgo"
+							}
+						}
+					]
+				},
+				{
+					"id": 55,
+					"name": "JSDate",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 253,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L253"
+						}
+					],
+					"signatures": [
+						{
+							"id": 56,
+							"name": "JSDate",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "JSDate returns a javascript date object at time t."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 253,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L253"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Date"
+								},
+								"name": "Date",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 53,
+					"name": "Local",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 249,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L249"
+						}
+					],
+					"signatures": [
+						{
+							"id": 54,
+							"name": "Local",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Local returns t with the location set to local time."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 249,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L249"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 14,
+								"name": "Time",
+								"package": "timedotgo"
+							}
+						}
+					]
+				},
+				{
+					"id": 44,
+					"name": "Millisecond",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 236,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L236"
+						}
+					],
+					"signatures": [
+						{
+							"id": 45,
+							"name": "Millisecond",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Millisecond returns the millisecond offset within the second specified by t,\nin the range [0, 1000]."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 236,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L236"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 40,
+					"name": "Minute",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 226,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L226"
+						}
+					],
+					"signatures": [
+						{
+							"id": 41,
+							"name": "Minute",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Minute returns the minute offset within the hour specified by t, in the\nrange [0, 59]."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 226,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L226"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 34,
+					"name": "Month",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 213,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L213"
+						}
+					],
+					"signatures": [
+						{
+							"id": 35,
+							"name": "Month",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Month returns the month of the year specified by t."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 213,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L213"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 1,
+								"name": "Month",
+								"package": "timedotgo"
+							}
+						}
+					]
+				},
+				{
+					"id": 42,
+					"name": "Second",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 231,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L231"
+						}
+					],
+					"signatures": [
+						{
+							"id": 43,
+							"name": "Second",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Second returns the second offset within the minute specified by t, in the\nrange [0, 59]."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 231,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L231"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 57,
+					"name": "String",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 262,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L262"
+						}
+					],
+					"signatures": [
+						{
+							"id": 58,
+							"name": "String",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "String returns the time formatted using the format string\n\n    \"2006-01-02 15:04:05.999999999 -0700 MST\"\n\nThe returned string is meant for debugging; for a stable serialized\nrepresentation, use t.Format with an explicit format string."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 262,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L262"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					]
+				},
+				{
+					"id": 72,
+					"name": "Sub",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 285,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L285"
+						}
+					],
+					"signatures": [
+						{
+							"id": 73,
+							"name": "Sub",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Sub returns the duration t-u."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 285,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L285"
+								}
+							],
+							"parameters": [
+								{
+									"id": 74,
+									"name": "u",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"target": 14,
+										"name": "Time",
+										"package": "timedotgo"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 61,
+					"name": "Unix",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 268,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L268"
+						}
+					],
+					"signatures": [
+						{
+							"id": 62,
+							"name": "Unix",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unix returns t as a Unix time, the number of seconds elapsed since January\n1, 1970 UTC. The result does not depend on the location associated with t."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 268,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L268"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 59,
+					"name": "UnixMilli",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 263,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L263"
+						}
+					],
+					"signatures": [
+						{
+							"id": 60,
+							"name": "UnixMilli",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 263,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L263"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 51,
+					"name": "UTC",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 245,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L245"
+						}
+					],
+					"signatures": [
+						{
+							"id": 52,
+							"name": "UTC",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "UTC returns t with the location set to UTC."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 245,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L245"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 14,
+								"name": "Time",
+								"package": "timedotgo"
+							}
+						}
+					]
+				},
+				{
+					"id": 32,
+					"name": "Year",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 209,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L209"
+						}
+					],
+					"signatures": [
+						{
+							"id": 33,
+							"name": "Year",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Year returns the year in which t occurs."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 209,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L209"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 30,
+					"name": "YearDay",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 205,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L205"
+						}
+					],
+					"signatures": [
+						{
+							"id": 31,
+							"name": "YearDay",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "YearDay returns the day of the year specified by t, in the range [1,365] for\nnon-leap years, and [1,366] in leap years."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 205,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L205"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 46,
+					"name": "Zone",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 241,
+							"character": 2,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L241"
+						}
+					],
+					"signatures": [
+						{
+							"id": 47,
+							"name": "Zone",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Zone computes the time zone in effect at time t, returning the abbreviated\nname of the zone (such as \"CET\") and its offset in seconds east of UTC."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "Time.ts",
+									"line": 241,
+									"character": 2,
+									"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L241"
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 48,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"children": [
+										{
+											"id": 49,
+											"name": "name",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Time.ts",
+													"line": 241,
+													"character": 12,
+													"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L241"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 50,
+											"name": "offset",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "Time.ts",
+													"line": 241,
+													"character": 26,
+													"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L241"
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "number"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"children": [
+												49,
+												50
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "Time.ts",
+											"line": 241,
+											"character": 10,
+											"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L241"
+										}
+									]
+								}
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Methods",
+					"children": [
+						75,
+						63,
+						66,
+						18,
+						24,
+						36,
+						69,
+						78,
+						38,
+						15,
+						55,
+						53,
+						44,
+						40,
+						34,
+						42,
+						57,
+						72,
+						61,
+						59,
+						51,
+						32,
+						30,
+						46
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 187,
+					"character": 17,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L187"
+				}
+			]
+		},
+		{
+			"id": 114,
+			"name": "Duration",
+			"variant": "declaration",
+			"kind": 2097152,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Duration (milliseconds)"
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 7,
+					"character": 12,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L7"
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "number"
+			}
+		},
+		{
+			"id": 113,
+			"name": "IANA",
+			"variant": "declaration",
+			"kind": 2097152,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "IANA: eg. \"America/New_York\"\nsee here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 145,
+					"character": 12,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L145"
+				}
+			],
+			"type": {
+				"type": "intrinsic",
+				"name": "string"
+			}
+		},
+		{
+			"id": 120,
+			"name": "ANSIC",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 122,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L122"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "Mon Jan _2 15:04:05 2006"
+			},
+			"defaultValue": "\"Mon Jan _2 15:04:05 2006\""
+		},
+		{
+			"id": 136,
+			"name": "DateOnly",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 138,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L138"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "2006-01-02"
+			},
+			"defaultValue": "\"2006-01-02\""
+		},
+		{
+			"id": 135,
+			"name": "DateTime",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 137,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L137"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "2006-01-02 15:04:05"
+			},
+			"defaultValue": "\"2006-01-02 15:04:05\""
+		},
+		{
+			"id": 118,
+			"name": "Hour",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Hour = 60 * Minute"
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 24,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L24"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": 114,
+				"name": "Duration",
+				"package": "timedotgo"
+			},
+			"defaultValue": "..."
+		},
+		{
+			"id": 130,
+			"name": "Kitchen",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 132,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L132"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "3:04PM"
+			},
+			"defaultValue": "\"3:04PM\""
+		},
+		{
+			"id": 119,
+			"name": "Layout",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "These are predefined layouts for use in Time.Format and time.Parse.\n The reference time used in these layouts is the specific time stamp:\n\n     01/02 03:04:05PM '06 -0700\n\n (January 2, 15:04:05, 2006, in time zone seven hours west of GMT).\n That value is recorded as the constant named Layout, listed below. As a\n Unix time, this is 1136239445. Since MST is GMT-0700, the reference would be\n printed by the Unix date command as:\n\n     Mon Jan 2 15:04:05 MST 2006\n\n It is a regrettable historic error that the date uses the American\n convention of putting the numerical month before the day.\n\n The example for Time.Format demonstrates the working of the layout string in\n detail and is a good reference.\n\n Note that the RFC822, RFC850, and RFC1123 formats should be applied only\n to local times. Applying them to UTC times will use \"UTC\" as the time zone\n abbreviation, while strictly speaking those RFCs require the use of \"GMT\"\n in that case. When using the RFC1123 or RFC1123Z formats for parsing,\n note that these formats define a leading zero for the day-in-month portion,\n which is not strictly allowed by RFC 1123. This will result in an error\n when parsing date strings that occur in the first 9 days of a given month.\n In general RFC1123Z should be used instead of RFC1123 for servers that\n insist on that format, and RFC3339 should be preferred for new protocols.\n RFC3339, RFC822, RFC822Z, RFC1123, and RFC1123Z are useful for formatting;\n when used with time.Parse they do not accept all the time formats permitted\n by the RFCs and they do accept time formats not formally defined. The\n RFC3339Nano format removes trailing zeros from the seconds field and thus\n may not sort correctly once formatted.\n\n Most programs can use one of the defined constants as the layout passed\n to Format or Parse. The rest of this comment can be ignored unless you are\n creating a custom layout string.\n\n To define your own format, write down what the reference time would look\n like formatted your way; see the values of constants like ANSIC, StampMicro\n or Kitchen for examples. The model is to demonstrate what the reference\n time looks like so that the Format and Parse methods can apply the same\n transformation to a general time value.\n\n Here is a summary of the components of a layout string. Each element shows\n by example the formatting of an element of the reference time. Only these\n values are recognized. Text in the layout string that is not recognized as\n part of the reference time is echoed verbatim during Format and expected to\n appear verbatim in the input to Parse.\n\n     Year: \"2006\" \"06\"\n     Month: \"Jan\" \"January\" \"01\" \"1\"\n     Day of the week: \"Mon\" \"Monday\"\n     Day of the month: \"2\" \"_2\" \"02\"\n     Day of the year: \"__2\" \"002\"\n     Hour: \"15\" \"3\" \"03\" (PM or AM)\n     Minute: \"4\" \"04\"\n     Second: \"5\" \"05\"\n     AM/PM mark: \"PM\"\n\n Numeric time zone offsets format as follows:\n\n     \"-0700\"     ±hhmm\n     \"-07:00\"    ±hh:mm\n     \"-07\"       ±hh\n     \"-070000\"   ±hhmmss\n     \"-07:00:00\" ±hh:mm:ss\n\n Replacing the sign in the format with a Z triggers the ISO 8601 behavior of\n printing Z instead of an offset for the UTC zone. Thus:\n\n     \"Z0700\"      Z or ±hhmm\n     \"Z07:00\"     Z or ±hh:mm\n     \"Z07\"        Z or ±hh\n     \"Z070000\"    Z or ±hhmmss\n     \"Z07:00:00\"  Z or ±hh:mm:ss\n\n Within the format string, the underscores in \"_2\" and \"__2\" represent spaces\n that may be replaced by digits if the following number has multiple digits,\n for compatibility with fixed-width Unix time formats. A leading zero\n represents a zero-padded value.\n\n The formats __2 and 002 are space-padded and zero-padded three-character day\n of year; there is no unpadded day of year format.\n\n A comma or decimal point followed by one or more zeros represents a\n fractional second, printed to the given number of decimal places. A comma or\n decimal point followed by one or more nines represents a fractional second,\n printed to the given number of decimal places, with trailing zeros removed.\n For example \"15:04:05,000\" or \"15:04:05.000\" formats or parses with\n millisecond precision.\n\n Some valid layouts are invalid time values for time.Parse, due to formats\n such as _ for space padding and Z for zone information."
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 121,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L121"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "01/02 03:04:05PM '06 -0700"
+			},
+			"defaultValue": "\"01/02 03:04:05PM '06 -0700\""
+		},
+		{
+			"id": 81,
+			"name": "Local",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Local represents the system's local time zone."
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 150,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L150"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": 113,
+				"name": "IANA",
+				"package": "timedotgo"
+			},
+			"defaultValue": "..."
+		},
+		{
+			"id": 115,
+			"name": "Millisecond",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Millisecond is the base duration unit."
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 12,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L12"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": 114,
+				"name": "Duration",
+				"package": "timedotgo"
+			},
+			"defaultValue": "1"
+		},
+		{
+			"id": 117,
+			"name": "Minute",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Minute = 60 * Second"
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 20,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L20"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": 114,
+				"name": "Duration",
+				"package": "timedotgo"
+			},
+			"defaultValue": "..."
+		},
+		{
+			"id": 126,
+			"name": "RFC1123",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 128,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L128"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "Mon, 02 Jan 2006 15:04:05 MST"
+			},
+			"defaultValue": "\"Mon, 02 Jan 2006 15:04:05 MST\""
+		},
+		{
+			"id": 127,
+			"name": "RFC1123Z",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 129,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L129"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "Mon, 02 Jan 2006 15:04:05 -0700"
+			},
+			"defaultValue": "\"Mon, 02 Jan 2006 15:04:05 -0700\""
+		},
+		{
+			"id": 128,
+			"name": "RFC3339",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 130,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L130"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "2006-01-02T15:04:05Z07:00"
+			},
+			"defaultValue": "\"2006-01-02T15:04:05Z07:00\""
+		},
+		{
+			"id": 129,
+			"name": "RFC3339Nano",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 131,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L131"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "2006-01-02T15:04:05.999999999Z07:00"
+			},
+			"defaultValue": "\"2006-01-02T15:04:05.999999999Z07:00\""
+		},
+		{
+			"id": 123,
+			"name": "RFC822",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 125,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L125"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "02 Jan 06 15:04 MST"
+			},
+			"defaultValue": "\"02 Jan 06 15:04 MST\""
+		},
+		{
+			"id": 124,
+			"name": "RFC822Z",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 126,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L126"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "02 Jan 06 15:04 -0700"
+			},
+			"defaultValue": "\"02 Jan 06 15:04 -0700\""
+		},
+		{
+			"id": 125,
+			"name": "RFC850",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 127,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L127"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "Monday, 02-Jan-06 15:04:05 MST"
+			},
+			"defaultValue": "\"Monday, 02-Jan-06 15:04:05 MST\""
+		},
+		{
+			"id": 122,
+			"name": "RubyDate",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 124,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L124"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "Mon Jan 02 15:04:05 -0700 2006"
+			},
+			"defaultValue": "\"Mon Jan 02 15:04:05 -0700 2006\""
+		},
+		{
+			"id": 116,
+			"name": "Second",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Second = 1000 * Millisecond"
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 16,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L16"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": 114,
+				"name": "Duration",
+				"package": "timedotgo"
+			},
+			"defaultValue": "..."
+		},
+		{
+			"id": 131,
+			"name": "Stamp",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 133,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L133"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "Jan _2 15:04:05"
+			},
+			"defaultValue": "\"Jan _2 15:04:05\""
+		},
+		{
+			"id": 133,
+			"name": "StampMicro",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 135,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L135"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "Jan _2 15:04:05.000000"
+			},
+			"defaultValue": "\"Jan _2 15:04:05.000000\""
+		},
+		{
+			"id": 132,
+			"name": "StampMilli",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 134,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L134"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "Jan _2 15:04:05.000"
+			},
+			"defaultValue": "\"Jan _2 15:04:05.000\""
+		},
+		{
+			"id": 134,
+			"name": "StampNano",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 136,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L136"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "Jan _2 15:04:05.000000000"
+			},
+			"defaultValue": "\"Jan _2 15:04:05.000000000\""
+		},
+		{
+			"id": 137,
+			"name": "TimeOnly",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 139,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L139"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "15:04:05"
+			},
+			"defaultValue": "\"15:04:05\""
+		},
+		{
+			"id": 121,
+			"name": "UnixDate",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 123,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L123"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "Mon Jan _2 15:04:05 MST 2006"
+			},
+			"defaultValue": "\"Mon Jan _2 15:04:05 MST 2006\""
+		},
+		{
+			"id": 82,
+			"name": "UTC",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "UTC represents Universal Coordinated Time (UTC)."
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 156,
+					"character": 13,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L156"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": 113,
+				"name": "IANA",
+				"package": "timedotgo"
+			},
+			"defaultValue": "\"Etc/UTC\""
+		},
+		{
+			"id": 103,
+			"name": "DateAt",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 333,
+					"character": 16,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L333"
+				}
+			],
+			"signatures": [
+				{
+					"id": 104,
+					"name": "DateAt",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Replicates golangs time.Date(...) function for creating Time objects.\nnote that nanoseconds is replaced with milliseconds for javascript\nand the name is DateAt (to avoid conflict with JS built-in Date)."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 333,
+							"character": 16,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L333"
+						}
+					],
+					"parameters": [
+						{
+							"id": 105,
+							"name": "year",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 106,
+							"name": "month",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"target": 1,
+								"name": "Month",
+								"package": "timedotgo"
+							}
+						},
+						{
+							"id": 107,
+							"name": "day",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 108,
+							"name": "hour",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 109,
+							"name": "min",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 110,
+							"name": "sec",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 111,
+							"name": "milli",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 112,
+							"name": "loc",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 14,
+						"name": "Time",
+						"package": "timedotgo"
+					}
+				}
+			]
+		},
+		{
+			"id": 100,
+			"name": "FromJSDate",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 301,
+					"character": 16,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L301"
+				}
+			],
+			"signatures": [
+				{
+					"id": 101,
+					"name": "FromJSDate",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "FromJSDate to convert a javascript Date object to Time."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 301,
+							"character": 16,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L301"
+						}
+					],
+					"parameters": [
+						{
+							"id": 102,
+							"name": "jsDate",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Date"
+								},
+								"name": "Date",
+								"package": "typescript"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 14,
+						"name": "Time",
+						"package": "timedotgo"
+					}
+				}
+			]
+		},
+		{
+			"id": 89,
+			"name": "Now",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 308,
+					"character": 16,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L308"
+				}
+			],
+			"signatures": [
+				{
+					"id": 90,
+					"name": "Now",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Now returns the current local time."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 308,
+							"character": 16,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L308"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 14,
+						"name": "Time",
+						"package": "timedotgo"
+					}
+				}
+			]
+		},
+		{
+			"id": 91,
+			"name": "Parse",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 367,
+					"character": 16,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L367"
+				}
+			],
+			"signatures": [
+				{
+					"id": 92,
+					"name": "Parse",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Parse parses a formatted string and returns the time value it represents.\nSee the documentation for the constant called Layout to see how to represent\nthe format. The second argument must be parseable using the format string\n(layout) provided as the first argument."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 367,
+							"character": 16,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L367"
+						}
+					],
+					"parameters": [
+						{
+							"id": 93,
+							"name": "layout",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 94,
+							"name": "value",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 14,
+						"name": "Time",
+						"package": "timedotgo"
+					}
+				}
+			]
+		},
+		{
+			"id": 95,
+			"name": "ParseInLocation",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 353,
+					"character": 16,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L353"
+				}
+			],
+			"signatures": [
+				{
+					"id": 96,
+					"name": "ParseInLocation",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "ParseInLocation is like Parse but differs in two important ways. First,\nin the absence of time zone information, Parse interprets a time as UTC;\nParseInLocation interprets the time as in the given location. Second,\nwhen given a zone offset or abbreviation, Parse tries to match it against\nthe Local location; ParseInLocation uses the given location."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 353,
+							"character": 16,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L353"
+						}
+					],
+					"parameters": [
+						{
+							"id": 97,
+							"name": "layout",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 98,
+							"name": "value",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 99,
+							"name": "location",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 14,
+						"name": "Time",
+						"package": "timedotgo"
+					}
+				}
+			]
+		},
+		{
+			"id": 83,
+			"name": "Unix",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 316,
+					"character": 16,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L316"
+				}
+			],
+			"signatures": [
+				{
+					"id": 84,
+					"name": "Unix",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Unix returns the local Time corresponding to the given Unix time,\nsec seconds since January 1, 1970 UTC."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 316,
+							"character": 16,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L316"
+						}
+					],
+					"parameters": [
+						{
+							"id": 85,
+							"name": "seconds",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 14,
+						"name": "Time",
+						"package": "timedotgo"
+					}
+				}
+			]
+		},
+		{
+			"id": 86,
+			"name": "UnixMilli",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "Time.ts",
+					"line": 324,
+					"character": 16,
+					"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L324"
+				}
+			],
+			"signatures": [
+				{
+					"id": 87,
+					"name": "UnixMilli",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "UnixMilli returns the local Time corresponding to the given Unix time,\nmsec milliseconds since January 1, 1970 UTC."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "Time.ts",
+							"line": 324,
+							"character": 16,
+							"url": "https://github.com/rednexela1941/timedotgo/blob/a9d0f07122f713cf8beeaee7eef7d6abf46f8d6e/src/Time.ts#L324"
+						}
+					],
+					"parameters": [
+						{
+							"id": 88,
+							"name": "millis",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 14,
+						"name": "Time",
+						"package": "timedotgo"
+					}
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Enumerations",
+			"children": [
+				1
+			]
+		},
+		{
+			"title": "Interfaces",
+			"children": [
+				14
+			]
+		},
+		{
+			"title": "Type Aliases",
+			"children": [
+				114,
+				113
+			]
+		},
+		{
+			"title": "Variables",
+			"children": [
+				120,
+				136,
+				135,
+				118,
+				130,
+				119,
+				81,
+				115,
+				117,
+				126,
+				127,
+				128,
+				129,
+				123,
+				124,
+				125,
+				122,
+				116,
+				131,
+				133,
+				132,
+				134,
+				137,
+				121,
+				82
+			]
+		},
+		{
+			"title": "Functions",
+			"children": [
+				103,
+				100,
+				89,
+				91,
+				95,
+				83,
+				86
+			]
+		}
+	],
+	"packageName": "timedotgo",
+	"symbolIdMap": {
+		"0": {
+			"packageName": "timedotgo",
+			"packagePath": "src/index.ts",
+			"qualifiedName": ""
+		},
+		"1": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month"
+		},
+		"2": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.January"
+		},
+		"3": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.February"
+		},
+		"4": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.March"
+		},
+		"5": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.April"
+		},
+		"6": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.May"
+		},
+		"7": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.June"
+		},
+		"8": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.July"
+		},
+		"9": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.August"
+		},
+		"10": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.September"
+		},
+		"11": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.October"
+		},
+		"12": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.November"
+		},
+		"13": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Month.December"
+		},
+		"14": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time"
+		},
+		"15": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.In"
+		},
+		"16": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.In"
+		},
+		"17": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "location"
+		},
+		"18": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Clock"
+		},
+		"19": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Clock"
+		},
+		"20": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type"
+		},
+		"21": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type.hour"
+		},
+		"22": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type.minute"
+		},
+		"23": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type.second"
+		},
+		"24": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Date"
+		},
+		"25": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Date"
+		},
+		"26": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type"
+		},
+		"27": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type.year"
+		},
+		"28": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type.month"
+		},
+		"29": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type.day"
+		},
+		"30": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.YearDay"
+		},
+		"31": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.YearDay"
+		},
+		"32": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Year"
+		},
+		"33": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Year"
+		},
+		"34": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Month"
+		},
+		"35": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Month"
+		},
+		"36": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Day"
+		},
+		"37": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Day"
+		},
+		"38": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Hour"
+		},
+		"39": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Hour"
+		},
+		"40": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Minute"
+		},
+		"41": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Minute"
+		},
+		"42": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Second"
+		},
+		"43": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Second"
+		},
+		"44": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Millisecond"
+		},
+		"45": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Millisecond"
+		},
+		"46": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Zone"
+		},
+		"47": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Zone"
+		},
+		"48": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type"
+		},
+		"49": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type.name"
+		},
+		"50": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "__type.offset"
+		},
+		"51": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.UTC"
+		},
+		"52": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.UTC"
+		},
+		"53": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Local"
+		},
+		"54": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Local"
+		},
+		"55": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.JSDate"
+		},
+		"56": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.JSDate"
+		},
+		"57": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.String"
+		},
+		"58": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.String"
+		},
+		"59": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.UnixMilli"
+		},
+		"60": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.UnixMilli"
+		},
+		"61": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Unix"
+		},
+		"62": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Unix"
+		},
+		"63": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.After"
+		},
+		"64": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.After"
+		},
+		"65": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "u"
+		},
+		"66": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Before"
+		},
+		"67": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Before"
+		},
+		"68": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "u"
+		},
+		"69": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Equal"
+		},
+		"70": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Equal"
+		},
+		"71": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "u"
+		},
+		"72": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Sub"
+		},
+		"73": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Sub"
+		},
+		"74": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "u"
+		},
+		"75": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Add"
+		},
+		"76": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Add"
+		},
+		"77": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "d"
+		},
+		"78": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Format"
+		},
+		"79": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Time.Format"
+		},
+		"80": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "layout"
+		},
+		"81": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Local"
+		},
+		"82": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "UTC"
+		},
+		"83": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Unix"
+		},
+		"84": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Unix"
+		},
+		"85": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "seconds"
+		},
+		"86": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "UnixMilli"
+		},
+		"87": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "UnixMilli"
+		},
+		"88": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "millis"
+		},
+		"89": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Now"
+		},
+		"90": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Now"
+		},
+		"91": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Parse"
+		},
+		"92": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Parse"
+		},
+		"93": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "layout"
+		},
+		"94": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "value"
+		},
+		"95": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "ParseInLocation"
+		},
+		"96": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "ParseInLocation"
+		},
+		"97": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "layout"
+		},
+		"98": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "value"
+		},
+		"99": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "location"
+		},
+		"100": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "FromJSDate"
+		},
+		"101": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "FromJSDate"
+		},
+		"102": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "jsDate"
+		},
+		"103": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "DateAt"
+		},
+		"104": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "DateAt"
+		},
+		"105": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "year"
+		},
+		"106": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "month"
+		},
+		"107": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "day"
+		},
+		"108": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "hour"
+		},
+		"109": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "min"
+		},
+		"110": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "sec"
+		},
+		"111": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "milli"
+		},
+		"112": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "loc"
+		},
+		"113": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "IANA"
+		},
+		"114": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Duration"
+		},
+		"115": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Millisecond"
+		},
+		"116": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Second"
+		},
+		"117": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Minute"
+		},
+		"118": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Hour"
+		},
+		"119": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Layout"
+		},
+		"120": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "ANSIC"
+		},
+		"121": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "UnixDate"
+		},
+		"122": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "RubyDate"
+		},
+		"123": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "RFC822"
+		},
+		"124": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "RFC822Z"
+		},
+		"125": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "RFC850"
+		},
+		"126": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "RFC1123"
+		},
+		"127": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "RFC1123Z"
+		},
+		"128": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "RFC3339"
+		},
+		"129": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "RFC3339Nano"
+		},
+		"130": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Kitchen"
+		},
+		"131": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "Stamp"
+		},
+		"132": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "StampMilli"
+		},
+		"133": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "StampMicro"
+		},
+		"134": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "StampNano"
+		},
+		"135": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "DateTime"
+		},
+		"136": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "DateOnly"
+		},
+		"137": {
+			"packageName": "timedotgo",
+			"packagePath": "src/Time.ts",
+			"qualifiedName": "TimeOnly"
+		}
+	},
+	"files": {
+		"entries": {
+			"1": "src/index.ts"
+		},
+		"reflections": {
+			"1": 0
+		}
+	}
+}

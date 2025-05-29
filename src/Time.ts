@@ -182,7 +182,7 @@ export enum Month {
 }
 
 /**
- * A Time represents an instant in time with MILLISECOND precision.
+ * A Time represents an instant in time with millisecond precision.
  */
 export interface Time {
   /**
