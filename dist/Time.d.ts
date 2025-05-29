@@ -167,7 +167,7 @@ export declare enum Month {
     December = 12
 }
 /**
- * A Time represents an instant in time with MILLISECOND precision.
+ * A Time represents an instant in time with millisecond precision.
  */
 export interface Time {
     /**
@@ -194,7 +194,7 @@ export interface Time {
     /**
      * YearDay returns the day of the year specified by t, in the range [1,365] for
      * non-leap years, and [1,366] in leap years.
-    */
+     */
     YearDay(): number;
     /**
      * Year returns the year in which t occurs.

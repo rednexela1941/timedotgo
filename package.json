@@ -16,7 +16,7 @@
   "scripts": {
     "tsc": "npx tsc -w",
     "docs": "npx typedoc",
-    "test": "node ./build_test.js && node tests/out/time_test.js"
+    "test": "node ./build_test.js && node --enable-source-maps tests/out/run_all.js"
   },
   "devDependencies": {
     "esbuild": "^0.25.5",

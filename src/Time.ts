@@ -148,7 +148,7 @@ export type IANA = string;
  * Local represents the system's local time zone.
  */
 export const Local: IANA = String(
-  Intl.DateTimeFormat().resolvedOptions().timeZone
+  Intl.DateTimeFormat().resolvedOptions().timeZone,
 );
 /**
  * UTC represents Universal Coordinated Time (UTC).
@@ -201,7 +201,7 @@ export interface Time {
   /**
    * YearDay returns the day of the year specified by t, in the range [1,365] for
    * non-leap years, and [1,366] in leap years.
-  */
+   */
   YearDay(): number;
   /**
    * Year returns the year in which t occurs.
@@ -338,7 +338,7 @@ export function DateAt(
   min: number,
   sec: number,
   milli: number,
-  loc: IANA
+  loc: IANA,
 ): Time {
   return _DateAt(year, month, day, hour, min, sec, milli, loc);
 }
@@ -353,7 +353,7 @@ export function DateAt(
 export function ParseInLocation(
   layout: string,
   value: string,
-  location: IANA
+  location: IANA,
 ): Time {
   return parseInternal(layout, value, location);
 }
@@ -522,7 +522,7 @@ function _DateAt(
   min: number,
   sec: number,
   milli: number,
-  loc: IANA
+  loc: IANA,
 ): TimePrivate {
   // 1. Build unix millis,
   // 2. create date,
@@ -566,26 +566,45 @@ function isZero(d: offsetData): boolean {
 }
 
 function parseGMTOffset(offsetStr: string): offsetData {
+  let od: offsetData = { negative: false, hours: 0, minutes: 0, seconds: 0 };
   if (offsetStr === "GMT") {
-    return { negative: false, hours: 0, minutes: 0, seconds: 0 };
+    return od;
   }
 
-  const match = offsetStr.match(/^GMT([+-])(\d{2}):(\d{2})$/);
-  if (!match) {
-    throw new Error(`invalid GMT offset format: ${offsetStr}`);
-  }
+  const subs = offsetStr.substring(3);
 
-  const [, sign, hourStr, minuteStr] = match;
-  const hours = parseInt(hourStr, 10);
-  const minutes = parseInt(minuteStr, 10);
-  const negative = sign === "-";
-
-  return {
-    negative: negative,
-    hours: hours,
-    minutes: minutes,
-    seconds: 0,
+  const throwErr = () => {
+    throw new Error(`invalid GMT offset format '${offsetStr}'`);
   };
+
+  const signChar = subs[0];
+  if (signChar === "+") {
+    od.negative = false;
+  } else if (signChar === "-") {
+    od.negative = true;
+  } else {
+    throwErr();
+  }
+  let i = 1;
+
+  const [hrs, hrsL] = getnum(subs.substring(i), true);
+  i += hrsL;
+  od.hours = hrs;
+
+  if (subs[i] === ":") {
+    i++;
+    const [mins, minL] = getnum(subs.substring(i), true);
+    od.minutes = mins;
+    i += minL;
+  }
+  if (subs[i] == ":") {
+    i++;
+    const [secs, secL] = getnum(subs.substring(i), true);
+    od.seconds = secs;
+    i += secL;
+  }
+
+  return od;
 }
 
 function _getOffsetTime(t: TimePrivate): offsetData {
@@ -593,6 +612,7 @@ function _getOffsetTime(t: TimePrivate): offsetData {
   const intl = new Intl.DateTimeFormat("en-US", {
     timeZone: zoneName,
     timeZoneName: "longOffset",
+    // timeZoneName: "shortOffset",
   }).formatToParts(t._internalDate());
   for (const item of intl) {
     if (item.type === "timeZoneName") {
@@ -622,11 +642,11 @@ function intlInfoFor(t: TimePrivate): intlInfo {
 
   const infoParts = Object.fromEntries(
     intl
-      .filter(item => item.type !== "literal")
-      .map(item => [
+      .filter((item) => item.type !== "literal")
+      .map((item) => [
         item.type,
         isValidNumber(item.value) ? Number(item.value) : item.value,
-      ])
+      ]),
   ) as any;
   infoParts.timeZoneOffset = zoneOffset;
   return infoParts as intlInfo;
@@ -696,12 +716,12 @@ function formatInternal(intlInfo: intlInfo, layout: string): string {
         break;
       case std.UnderYearDay:
         out.push(
-          String(yearDay(intlInfo.year, month, intlInfo.day)).padStart(3, " ")
+          String(yearDay(intlInfo.year, month, intlInfo.day)).padStart(3, " "),
         );
         break;
       case std.ZeroYearDay:
         out.push(
-          String(yearDay(intlInfo.year, month, intlInfo.day)).padStart(3, "0")
+          String(yearDay(intlInfo.year, month, intlInfo.day)).padStart(3, "0"),
         );
         break;
       case std.Hour:
@@ -823,7 +843,7 @@ function formatInternal(intlInfo: intlInfo, layout: string): string {
 function parseInternal(
   layout: string,
   value: string,
-  defaultLocation: IANA
+  defaultLocation: IANA,
 ): TimePrivate {
   const parts = parseLayout(layout, true);
   // console.log(
@@ -898,7 +918,7 @@ function parseInternal(
       case std.ZeroDay:
         const [dayVal, dayLength] = getnum(
           value.substring(vi),
-          mP === std.ZeroDay
+          mP === std.ZeroDay,
         );
         day = dayVal;
         vi += dayLength;
@@ -912,7 +932,7 @@ function parseInternal(
         }
         const [yval, ylen] = getnum3(
           value.substring(vi),
-          mP === std.ZeroYearDay
+          mP === std.ZeroYearDay,
         );
         vi += ylen;
         yearday = yval;
@@ -931,7 +951,7 @@ function parseInternal(
       case std.ZeroHour12: {
         const [hourNum, hourNumL] = getnum(
           value.substring(vi),
-          mP == std.ZeroHour12
+          mP == std.ZeroHour12,
         );
         if (hourNum < 0 || 12 < hourNum)
           throw new Error(`invalid hour12: ${hourNum}`);
@@ -944,7 +964,7 @@ function parseInternal(
       case std.ZeroMinute:
         const [minNum, minNumL] = getnum(
           value.substring(vi),
-          mP === std.ZeroMinute
+          mP === std.ZeroMinute,
         );
         if (minNum < 0 || minNum > 60)
           throw new Error(`invalid minute: ${minNum}`);
@@ -955,7 +975,7 @@ function parseInternal(
       case std.ZeroSecond: {
         const [secNum, setNumL] = getnum(
           value.substring(vi),
-          mP === std.ZeroSecond
+          mP === std.ZeroSecond,
         );
         if (secNum < 0 || secNum > 60)
           throw new Error(`invalid second: ${secNum}`);
@@ -979,9 +999,7 @@ function parseInternal(
           while (n < subv.length && isDigit(subv[n])) {
             n++;
           }
-          const [millisV, millisL] = parseFracSeconds(
-            subv.substring(0, n)
-          );
+          const [millisV, millisL] = parseFracSeconds(subv.substring(0, n));
           milli = millisV;
           vi += millisL;
         }
@@ -1030,7 +1048,7 @@ function parseInternal(
       case std.TZ:
         tzString = parseTimeZoneStr(value.substring(vi));
         vi += tzString.length;
-	if (tzString === "UTC") zone = UTC;
+        if (tzString === "UTC") zone = UTC;
         break;
       case std.ISO8601TZ:
       case std.ISO8601ShortTZ:
@@ -1060,7 +1078,7 @@ function parseInternal(
           if (subv.length < 6) errTooShort();
           if (subv[3] !== ":")
             throw new Error(
-              `tz missing colon: ${subv[3]} (${subv} -- ${value})`
+              `tz missing colon: ${subv[3]} (${subv} -- ${value})`,
             );
           zsign = subv[0];
           zhour = subv.substring(1, 3);
@@ -1129,7 +1147,7 @@ function parseInternal(
         }
 
         const [millisV, millisL] = parseFracSeconds(
-          subv.substring(0, endIndex)
+          subv.substring(0, endIndex),
         );
         vi += millisL;
         milli = millisV;
@@ -1143,7 +1161,7 @@ function parseInternal(
           throw new Error(`not enough digits ${subv}`);
         }
         const [millisV, millisL] = parseFracSeconds(
-          subv.substring(0, numDigits + 1)
+          subv.substring(0, numDigits + 1),
         );
         vi += millisL;
         milli = millisV;
@@ -1198,22 +1216,32 @@ function parseInternal(
   }
   // console.log({ year, month, day, hour, minute, second, milli });
   if (day < 1 || day > daysIn(month, year)) {
-	  throw new Error(`day ${day} out of range for month+year`);
+    throw new Error(`day ${day} out of range for month+year`);
   }
 
   if (zone !== null) {
-	  return _DateAt(year, month, day, hour, minute, second, milli, zone);
+    // handles UTC
+    return _DateAt(year, month, day, hour, minute, second, milli, zone);
   }
 
   if (zoneOffsetHr !== 0 || zoneOffsetMin !== 0 || zoneOffsetSec !== 0) {
-	  const t = _DateAt(year, month, day, hour, minute, second, milli, UTC);
-          t._setTZAbbr(tzString);
-          t._setTZoffset(zoneOffsetSign, zoneOffsetHr, zoneOffsetMin, zoneOffsetSec);
-	  return t;
+    const t = _DateAt(year, month, day, hour, minute, second, milli, UTC);
+    t._setTZAbbr(tzString);
+    t._setTZoffset(zoneOffsetSign, zoneOffsetHr, zoneOffsetMin, zoneOffsetSec);
+    return t;
   }
 
   if (tzString.length > 0) {
-    let t = _DateAt(year, month, day, hour, minute, second, milli, UTC);
+    let t = _DateAt(
+      year,
+      month,
+      day,
+      hour,
+      minute,
+      second,
+      milli,
+      defaultLocation,
+    );
     if (tzString.length > 3 && tzString.substring(0, 3) === "GMT") {
       let offset = throwInvalidNumber(tzString.substring(3), tzString); // like GMT-8, GMT+8
       offset *= 3600;
@@ -1223,17 +1251,31 @@ function parseInternal(
       zoneOffsetMin = om;
       zoneOffsetSec = os;
       if (offset < 0) zoneOffsetSign = -1;
-      t._setTZoffset(zoneOffsetSign, zoneOffsetHr, zoneOffsetMin, zoneOffsetSec);
+      t._setTZoffset(
+        zoneOffsetSign,
+        zoneOffsetHr,
+        zoneOffsetMin,
+        zoneOffsetSec,
+      );
     }
     t._setTZAbbr(tzString);
     return t;
   }
 
-  return _DateAt(year, month, day, hour, minute, second, milli, defaultLocation);
+  return _DateAt(
+    year,
+    month,
+    day,
+    hour,
+    minute,
+    second,
+    milli,
+    defaultLocation,
+  );
 }
 
 function secondsToHMS(
-  totalSeconds: number
+  totalSeconds: number,
 ): [hours: number, minutes: number, seconds: number] {
   const hours = Math.floor(totalSeconds / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
@@ -1341,7 +1383,7 @@ function getnum(s: string, fixed: boolean): [val: number, length: number] {
 function _findPrefix(
   s: string,
   opts: string[],
-  typeName: string
+  typeName: string,
 ): [match: string, index: number] {
   for (let i = 0; i < opts.length; i++) {
     const opt = opts[i];
@@ -1557,7 +1599,7 @@ const std0x: { [k: string]: std } = {
 function charsMatch(
   chars: string[],
   startIndex: number,
-  matchS: string
+  matchS: string,
 ): boolean {
   const matchPoints = [...matchS];
   for (let i = 0; i < matchPoints.length; i++) {

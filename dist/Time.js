@@ -368,29 +368,48 @@ function isZero(d) {
     return d.hours === 0 && d.minutes === 0 && d.seconds === 0;
 }
 function parseGMTOffset(offsetStr) {
+    let od = { negative: false, hours: 0, minutes: 0, seconds: 0 };
     if (offsetStr === "GMT") {
-        return { negative: false, hours: 0, minutes: 0, seconds: 0 };
+        return od;
     }
-    const match = offsetStr.match(/^GMT([+-])(\d{2}):(\d{2})$/);
-    if (!match) {
-        throw new Error(`invalid GMT offset format: ${offsetStr}`);
-    }
-    const [, sign, hourStr, minuteStr] = match;
-    const hours = parseInt(hourStr, 10);
-    const minutes = parseInt(minuteStr, 10);
-    const negative = sign === "-";
-    return {
-        negative: negative,
-        hours: hours,
-        minutes: minutes,
-        seconds: 0,
+    const subs = offsetStr.substring(3);
+    const throwErr = () => {
+        throw new Error(`invalid GMT offset format '${offsetStr}'`);
     };
+    const signChar = subs[0];
+    if (signChar === "+") {
+        od.negative = false;
+    }
+    else if (signChar === "-") {
+        od.negative = true;
+    }
+    else {
+        throwErr();
+    }
+    let i = 1;
+    const [hrs, hrsL] = getnum(subs.substring(i), true);
+    i += hrsL;
+    od.hours = hrs;
+    if (subs[i] === ":") {
+        i++;
+        const [mins, minL] = getnum(subs.substring(i), true);
+        od.minutes = mins;
+        i += minL;
+    }
+    if (subs[i] == ":") {
+        i++;
+        const [secs, secL] = getnum(subs.substring(i), true);
+        od.seconds = secs;
+        i += secL;
+    }
+    return od;
 }
 function _getOffsetTime(t) {
     const zoneName = t._ianaZoneName();
     const intl = new Intl.DateTimeFormat("en-US", {
         timeZone: zoneName,
         timeZoneName: "longOffset",
+        // timeZoneName: "shortOffset",
     }).formatToParts(t._internalDate());
     for (const item of intl) {
         if (item.type === "timeZoneName") {
@@ -417,8 +436,8 @@ function intlInfoFor(t) {
     }).formatToParts(t._internalDate());
     const zoneOffset = _getOffsetTime(t);
     const infoParts = Object.fromEntries(intl
-        .filter(item => item.type !== "literal")
-        .map(item => [
+        .filter((item) => item.type !== "literal")
+        .map((item) => [
         item.type,
         isValidNumber(item.value) ? Number(item.value) : item.value,
     ]));
@@ -944,6 +963,7 @@ function parseInternal(layout, value, defaultLocation) {
         throw new Error(`day ${day} out of range for month+year`);
     }
     if (zone !== null) {
+        // handles UTC
         return _DateAt(year, month, day, hour, minute, second, milli, zone);
     }
     if (zoneOffsetHr !== 0 || zoneOffsetMin !== 0 || zoneOffsetSec !== 0) {
@@ -953,7 +973,7 @@ function parseInternal(layout, value, defaultLocation) {
         return t;
     }
     if (tzString.length > 0) {
-        let t = _DateAt(year, month, day, hour, minute, second, milli, UTC);
+        let t = _DateAt(year, month, day, hour, minute, second, milli, defaultLocation);
         if (tzString.length > 3 && tzString.substring(0, 3) === "GMT") {
             let offset = throwInvalidNumber(tzString.substring(3), tzString); // like GMT-8, GMT+8
             offset *= 3600;
