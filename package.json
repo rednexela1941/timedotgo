@@ -20,7 +20,7 @@
     "readme": "npm run build-test && ./bin/README.pl > README.md",
     "tsc": "npx tsc -w",
     "docs": "npm run readme && npx typedoc",
-    "test": "npm run build-test && node --enable-source-maps tests/out/run_all.js"
+    "test": "npm run build-test && node --enable-source-maps tests/out/tests/run_all.js"
   },
   "devDependencies": {
     "esbuild": "^0.25.5",

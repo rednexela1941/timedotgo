@@ -1,5 +1,5 @@
 import { TestFormat } from "./format_test.ts";
-import { TestBackAndForthParse, TestGoGeneratedParse } from "./parse_test.ts";
+import { TestBackAndForthParse, TestGoGeneratedParse, TestFixedZoneParse } from "./parse_test.ts";
 import { TestTimeLogic } from "./time_tests.ts";
 
 function run(fn: () => void) {
@@ -9,7 +9,9 @@ function run(fn: () => void) {
   console.log("OK:", fn.name, end - start);
 }
 
+run(TestFixedZoneParse);
 run(TestGoGeneratedParse);
 run(TestFormat);
 run(TestBackAndForthParse);
 run(TestTimeLogic);
+

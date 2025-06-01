@@ -2,6 +2,17 @@ import * as time from "timedotgo";
 import { assert } from "./utils.ts";
 import generatedParseTests from "./generated_parse_test_data.json";
 
+export function TestFixedZoneParse() {
+	const input = "2025-05-17T18:48:00-06:00";
+	const t = time.Parse(time.RFC3339, input);
+	const {name , offset } = t.Zone();
+	assert(name, "");
+	assert(offset, -21600);
+	assert(t.UTC().String(), "2025-05-18 00:48:00 +0000 UTC")
+
+	assert(t.String(), "2025-05-17 18:48:00 -0600 -0600")
+}
+
 export function TestBackAndForthParse() {
   const now = time.Now();
   for (const format of parseTests) {
