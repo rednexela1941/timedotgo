@@ -1,9 +1,13 @@
 {
   "name": "timedotgo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Golangs excellent \"time\" API ported to typescript.",
   "license": "MIT",
   "author": "rednexela1941",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rednexela1941/timedotgo"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
