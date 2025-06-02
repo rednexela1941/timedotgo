@@ -549,7 +549,16 @@ function formatInternal(intlInfo, layout) {
                 out.push(hour >= 12 ? "pm" : "am");
                 break;
             case 22 /* std.TZ */:
-                out.push(intlInfo.timeZoneName);
+                if (intlInfo.timeZoneName !== "") {
+                    out.push(intlInfo.timeZoneName);
+                }
+                else {
+                    // No time zone known for this time, but we must print one.
+                    // Use the -0700 format.
+                    out.push(zoneOffset.negative ? "-" : "+");
+                    out.push(String(zoneOffset.hours).padStart(2, "0"));
+                    out.push(String(zoneOffset.minutes).padStart(2, "0"));
+                }
                 break;
             case 23 /* std.ISO8601TZ */:
                 if (isZero(zoneOffset)) {
@@ -979,7 +988,11 @@ function parseInternal(layout, value, defaultLocation) {
         return _DateAt(year, month, day, hour, minute, second, milli, zone);
     }
     if (zoneOffsetHr !== 0 || zoneOffsetMin !== 0 || zoneOffsetSec !== 0) {
-        const t = _DateAt(year, month, day, hour, minute, second, milli, UTC);
+        // const offsetSec =
+        //   zoneOffsetSign * (zoneOffsetHr * 60 + zoneOffsetMin) * 60 + zoneOffsetSec;
+        const t = _DateAt(year, month, day, hour, minute, second, 
+        // second - offsetSec,
+        milli, UTC);
         t._setTZAbbr(tzString);
         t._setTZoffset(zoneOffsetSign, zoneOffsetHr, zoneOffsetMin, zoneOffsetSec);
         return t;
