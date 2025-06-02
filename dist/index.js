@@ -1,2 +1,2 @@
-export { Month, Local, UTC, Unix, UnixMilli, Now, Parse, ParseInLocation, FromJSDate, Since, Until, DateAt, ListAvailableIANAs, Millisecond, Second, Minute, Hour, Layout, ANSIC, UnixDate, RubyDate, RFC822, RFC822Z, RFC850, RFC1123, RFC1123Z, RFC3339, RFC3339Nano, Kitchen, Stamp, StampMilli, StampMicro, StampNano, DateTime, DateOnly, TimeOnly, } from "./Time.js";
+export { Month, Weekday, Local, UTC, Unix, UnixMilli, Now, Parse, ParseInLocation, FromJSDate, Since, Until, DateAt, ListAvailableIANAs, Millisecond, Second, Minute, Hour, Layout, ANSIC, UnixDate, RubyDate, RFC822, RFC822Z, RFC850, RFC1123, RFC1123Z, RFC3339, RFC3339Nano, Kitchen, Stamp, StampMilli, StampMicro, StampNano, DateTime, DateOnly, TimeOnly, } from "./Time.js";
 //# sourceMappingURL=index.js.map

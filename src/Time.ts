@@ -182,6 +182,19 @@ export enum Month {
 }
 
 /**
+ * A Weekday specifies a day of the week (Sunday = 0, ...).
+ */
+export enum Weekday {
+  Sunday = 0,
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+}
+
+/**
  * A Time represents an instant in time with millisecond precision.
  */
 export interface Time {
@@ -198,6 +211,10 @@ export interface Time {
    * Date returns the year, month, and day in which t occurs.
    */
   Date(): { year: number; month: Month; day: number };
+  /**
+   * Weekday returns the day of the week specified by t.
+   */
+  Weekday(): Weekday;
   /**
    * YearDay returns the day of the year specified by t, in the range [1,365] for
    * non-leap years, and [1,366] in leap years.
@@ -299,14 +316,14 @@ export interface Time {
  * FromJSDate to convert a javascript Date object to Time.
  */
 export function FromJSDate(jsDate: Date): Time {
-  return new TimePrivate(jsDate.getTime());
+  return new _Time(jsDate.getTime(), UTCLocation);
 }
 
 /**
  * Now returns the current local time.
  */
 export function Now(): Time {
-  return new TimePrivate(Date.now()).Local();
+  return new _Time(Date.now(), LocalLocation);
 }
 
 /**
@@ -314,7 +331,7 @@ export function Now(): Time {
  * sec seconds since January 1, 1970 UTC.
  */
 export function Unix(seconds: number): Time {
-  return new TimePrivate(seconds * 1000).In(Local);
+  return new _Time(seconds * 1000, LocalLocation);
 }
 
 /**
@@ -322,7 +339,7 @@ export function Unix(seconds: number): Time {
  * msec milliseconds since January 1, 1970 UTC.
  */
 export function UnixMilli(millis: number): Time {
-  return new TimePrivate(millis).In(Local);
+  return new _Time(millis, LocalLocation);
 }
 
 /**
@@ -382,68 +399,48 @@ export function Parse(layout: string, value: string): Time {
   return parseInternal(layout, value, UTC);
 }
 
-class TimePrivate implements Time {
-  readonly #__dateInternal: Date;
-  #__ianaZone: IANA = UTC;
-  #__cacheInfo?: intlInfo = void 0;
+class _Time implements Time {
+  readonly #unixMilli: number; // always in UTC.
+  readonly #location: _Location;
+  #displayInfo?: _DisplayInfo = void 0;
 
-  constructor(utcUnixMillis: number = 0) {
-    this.#__dateInternal = new Date(utcUnixMillis);
+  constructor(utcUnixMilli: number, loc: _Location) {
+    this.#unixMilli = utcUnixMilli;
+    this.#location = loc;
   }
 
-  _setTZoffset(sign: number, hr: number, min: number, sec: number) {
-    const info = this._getIntlInfo();
-    info.timeZoneOffset.negative = sign < 0;
-    info.timeZoneOffset.hours = hr;
-    info.timeZoneOffset.minutes = min;
-    info.timeZoneOffset.seconds = sec;
-  }
-
-  _setTZAbbr(tzName: string) {
-    this._getIntlInfo().timeZoneName = tzName;
-  }
-
-  _internalDate(): Date {
-    return this.#__dateInternal;
-  }
-  // private
-  _ianaZoneName(): IANA {
-    return this.#__ianaZone;
-  }
-
-  // file private
-  _getIntlInfo(): intlInfo {
-    if (this.#__cacheInfo) return this.#__cacheInfo;
-    const info = intlInfoFor(this);
-    this.#__cacheInfo = info;
+  #getDisplayInfo(): _DisplayInfo {
+    if (this.#displayInfo) return this.#displayInfo;
+    const info = _displayInfoFor(this.#unixMilli, this.#location);
+    this.#displayInfo = info;
     return info;
   }
 
   public UnixMilli(): number {
     // returns milliseconds.
-    return this.#__dateInternal.getTime();
+    return this.#unixMilli;
   }
 
   public Add(d: Duration): Time {
-    const t = new TimePrivate(this.UnixMilli() + d);
-    t.#__ianaZone = this.#__ianaZone;
-    return t;
+    return new _Time(this.#unixMilli + d, this.#location);
   }
 
   public In(location: IANA): Time {
-    const t = new TimePrivate(this.UnixMilli());
-    t.#__ianaZone = location;
-    return t;
+    return new _Time(this.#unixMilli, new _IANALocation(location));
   }
 
   public Clock(): { hour: number; minute: number; second: number } {
-    const { hour, minute, second } = this._getIntlInfo();
+    const { hour, minute, second } = this.#getDisplayInfo();
     return { hour, minute, second };
   }
 
   public Date(): { year: number; month: Month; day: number } {
-    const { year, month, day } = this._getIntlInfo();
+    const { year, month, day } = this.#getDisplayInfo();
     return { year, month, day };
+  }
+
+  public Weekday(): Weekday {
+    return this.#getDisplayInfo().weekdayInt;
   }
 
   public YearDay(): number {
@@ -476,15 +473,12 @@ class TimePrivate implements Time {
   }
 
   public Millisecond(): number {
-    return this._getIntlInfo().fractionalSecond;
+    return this.#getDisplayInfo().millisecond;
   }
 
   public Zone(): { name: string; offset: number } {
-    const { timeZoneName, timeZoneOffset } = this._getIntlInfo();
-    const { hours, minutes, seconds, negative } = timeZoneOffset;
-    let offset = (hours * 60 + minutes) * 60 + seconds;
-    if (negative) offset *= -1;
-    return { name: timeZoneName, offset };
+    const { timeZoneName, timeZoneOffset } = this.#getDisplayInfo();
+    return { name: timeZoneName, offset: Math.trunc(timeZoneOffset / Second) };
   }
 
   public UTC(): Time {
@@ -496,7 +490,7 @@ class TimePrivate implements Time {
   }
 
   public JSDate(): Date {
-    return new Date(this.UnixMilli());
+    return new Date(this.#unixMilli);
   }
 
   public String(): string {
@@ -504,27 +498,27 @@ class TimePrivate implements Time {
   }
 
   public Unix(): number {
-    return Math.floor(this.UnixMilli() / 1000);
+    return Math.floor(this.#unixMilli / 1000);
   }
 
   public After(u: Time): boolean {
-    return this.UnixMilli() > u.UnixMilli();
+    return this.#unixMilli > u.UnixMilli();
   }
 
   public Before(u: Time): boolean {
-    return this.UnixMilli() < u.UnixMilli();
+    return this.#unixMilli < u.UnixMilli();
   }
 
   public Equal(u: Time): boolean {
-    return this.UnixMilli() === u.UnixMilli();
+    return this.#unixMilli === u.UnixMilli();
   }
 
   public Format(layout: string): string {
-    return formatInternal(this._getIntlInfo(), layout);
+    return formatInternal(this.#getDisplayInfo(), layout);
   }
 
   public Sub(u: Time): Duration {
-    return this.UnixMilli() - u.UnixMilli();
+    return this.#unixMilli - u.UnixMilli();
   }
 }
 
@@ -537,65 +531,111 @@ function _DateAt(
   sec: number,
   milli: number,
   loc: IANA,
-): TimePrivate {
+): _Time {
+  const location = loc === UTC ? UTCLocation : new _IANALocation(loc);
+  return _DateAtLocation(year, month, day, hour, min, sec, milli, location);
+}
+
+function _DateAtLocation(
+  year: number,
+  month: Month,
+  day: number,
+  hour: number,
+  min: number,
+  sec: number,
+  milli: number,
+  loc: _Location,
+): _Time {
+  const utcUnixMs = Date.UTC(year, month - 1, day, hour, min, sec, milli);
+  if (loc === UTCLocation) return new _Time(utcUnixMs, UTCLocation);
   // 1. Build unix millis,
   // 2. create date,
   // 3. adjust based on locale.
-  const utcUnixMs = Date.UTC(year, month - 1, day, hour, min, sec, milli);
-  const t1 = new TimePrivate(utcUnixMs).In(loc) as TimePrivate;
-  if (loc === UTC) {
-    return t1;
+  const offset1 = loc.OffsetAt(utcUnixMs);
+  const offset2 = loc.OffsetAt(utcUnixMs - offset1);
+
+  if (offset1 === offset2) {
+    return new _Time(utcUnixMs - offset1, loc);
   }
-  const { offset: offset1 } = t1.Zone();
-  const t2 = new TimePrivate(utcUnixMs - offset1 * 1000).In(loc) as TimePrivate;
-  const { offset: offset2 } = t2.Zone();
-  if (offset2 !== offset1) {
-    return new TimePrivate(utcUnixMs - offset2 * 1000).In(loc) as TimePrivate;
-  }
-  return t2;
+
+  return new _Time(utcUnixMs - offset2, loc);
 }
 
-type offsetData = {
-  hours: number;
-  minutes: number;
-  seconds: number;
-  negative: boolean;
-};
+interface _Location {
+  AbbrvAt(unixMilli: number): string; // abbreviation at given time.
+  OffsetAt(unixMilli: number): Duration; // utc offset at given time.
+}
 
-type intlInfo = {
-  weekday: string;
+class _FixedLocation implements _Location {
+  readonly #name: string;
+  readonly #offset: Duration;
+  constructor(name: string, offset: Duration) {
+    this.#name = name;
+    this.#offset = offset;
+  }
+  AbbrvAt(_unixMilli: number): string {
+    return this.#name;
+  }
+  OffsetAt(_unixMilli: number): Duration {
+    return this.#offset;
+  }
+}
+
+class _IANALocation implements _Location {
+  readonly #iana: string;
+  constructor(iana: IANA) {
+    this.#iana = iana;
+  }
+  AbbrvAt(unixMilli: number): string {
+    return _getAbbrvAt(unixMilli, this.#iana);
+  }
+  OffsetAt(unixMilli: number): Duration {
+    return _getOffsetAt(unixMilli, this.#iana);
+  }
+}
+
+const LocalLocation = new _IANALocation(Local);
+const UTCLocation = new _IANALocation(UTC);
+
+type _DisplayInfo = {
+  year: number;
   month: Month;
   day: number;
-  year: number;
+  weekday: string; // eg. Monday
+  weekdayInt: Weekday;
   hour: number;
   minute: number;
   second: number;
-  fractionalSecond: number;
+  millisecond: number;
   timeZoneName: string;
-  timeZoneOffset: offsetData;
+  timeZoneOffset: Duration;
 };
 
-function isZero(d: offsetData): boolean {
-  return d.hours === 0 && d.minutes === 0 && d.seconds === 0;
-}
-
-function parseGMTOffset(offsetStr: string): offsetData {
-  let od: offsetData = { negative: false, hours: 0, minutes: 0, seconds: 0 };
+/**
+ * _GMTOffsetToDuration: takes GMT+03:00 -> (3 * 60 * 60) * 1000 (milliseconds offset)
+ */
+function _GMTOffsetToDuration(offsetStr: string): Duration {
   if (offsetStr === "GMT") {
-    return od;
+    return 0;
   }
-
-  const subs = offsetStr.substring(3);
-
   const throwErr = () => {
     throw new Error(`invalid GMT offset format '${offsetStr}'`);
   };
 
+  if (offsetStr.substring(0, 3) !== "GMT") throwErr();
+
+  const subs = offsetStr.substring(3);
+
+  let sign = 1,
+    hours = 0,
+    minutes = 0,
+    seconds = 0;
+
   const signChar = subs[0];
   if (signChar === "+") {
-    od.negative = false;
+    sign = 1;
   } else if (signChar === "-") {
-    od.negative = true;
+    sign = -1;
   } else {
     throwErr();
   }
@@ -603,95 +643,86 @@ function parseGMTOffset(offsetStr: string): offsetData {
 
   const [hrs, hrsL] = getnum(subs.substring(i), true);
   i += hrsL;
-  od.hours = hrs;
+  hours = hrs;
 
   if (subs[i] === ":") {
     i++;
     const [mins, minL] = getnum(subs.substring(i), true);
-    od.minutes = mins;
+    minutes = mins;
     i += minL;
   }
   if (subs[i] == ":") {
     i++;
     const [secs, secL] = getnum(subs.substring(i), true);
-    od.seconds = secs;
+    seconds = secs;
     i += secL;
   }
 
-  return od;
+  return sign * (hours * Hour + minutes * Minute + seconds * Second);
 }
 
-function _getOffsetTime(t: TimePrivate): offsetData {
-  const zoneName = t._ianaZoneName();
+function _getOffsetAt(unixMilli: number, iana: IANA): Duration {
   const intl = new Intl.DateTimeFormat("en-US", {
-    timeZone: zoneName,
+    timeZone: iana,
     timeZoneName: "longOffset",
-    // timeZoneName: "shortOffset",
-  }).formatToParts(t._internalDate());
+  }).formatToParts(new Date(unixMilli));
   for (const item of intl) {
-    if (item.type === "timeZoneName") {
-      return parseGMTOffset(item.value);
-    }
+    if (item.type === "timeZoneName") return _GMTOffsetToDuration(item.value);
   }
-  throw new Error(`offset not found for: ${zoneName}`);
+  throw new Error(`offset not found for: ${iana}`);
 }
 
-// TODO: write a fast version for common cases that skips the Intl call (slow).
-function intlInfoFor(t: TimePrivate): intlInfo {
+function _getAbbrvAt(unixMilli: number, iana: IANA): string {
   const intl = new Intl.DateTimeFormat("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "numeric",
-    minute: "numeric",
-    hour: "numeric",
-    second: "numeric",
-    hourCycle: "h23",
-    day: "numeric",
-    timeZone: t._ianaZoneName(),
+    timeZone: iana,
     timeZoneName: "short",
-    // @ts-ignore
-    fractionalSecondDigits: 3, // typescript doesn't know about this.
-  }).formatToParts(t._internalDate());
-  const zoneOffset = _getOffsetTime(t);
-
-  const infoParts = Object.fromEntries(
-    intl
-      .filter((item) => item.type !== "literal")
-      .map((item) => [
-        item.type,
-        isValidNumber(item.value) ? Number(item.value) : item.value,
-      ]),
-  ) as any;
-  infoParts.timeZoneOffset = zoneOffset;
-  return infoParts as intlInfo;
+  }).formatToParts(new Date(unixMilli));
+  for (const item of intl) {
+    if (item.type === "timeZoneName") return item.value;
+  }
+  throw new Error(`time zone abbreviation not found for: ${iana}`);
 }
 
-// function formatInternal(t: TimePrivate, layout: string): string {
-function formatInternal(intlInfo: intlInfo, layout: string): string {
-  let out: string[] = [];
-  const parts = parseLayout(layout, false);
-  // const intlInfo = t._getIntlInfo();
-  // intlInfo:
-  // {
-  //   weekday: "Monday",
-  //   month: 5,
-  //   day: 26,
-  //   year: 2025,
-  //   hour: 23,
-  //   minute: 46,
-  //   second: 55,
-  //   fractionalSecond: 257,
-  //   timeZoneName: "UTC",
-  //   timeZoneOffset: { negative: false, hours: 0, minutes: 0, seconds: 0 },
-  // };
+// get the display information for a unix time + location.
+// we use the location to get the offset information.
+// then shift the date and get the display info (like year, month, day, hour, min, second, weekday, etcetera) by pretending that we are in UTC.
+function _displayInfoFor(unixMilli: number, loc: _Location): _DisplayInfo {
+  const abbrv = loc.AbbrvAt(unixMilli);
+  const offset = loc.OffsetAt(unixMilli);
+  const fakeUTCUnix = unixMilli + offset;
+  const fakeDate = new Date(fakeUTCUnix);
+  return {
+    year: fakeDate.getUTCFullYear(),
+    month: fakeDate.getUTCMonth() + 1,
+    weekday: longDayNames[fakeDate.getUTCDay()],
+    weekdayInt: fakeDate.getUTCDay(),
+    day: fakeDate.getUTCDate(),
+    hour: fakeDate.getUTCHours(),
+    minute: fakeDate.getUTCMinutes(),
+    second: fakeDate.getUTCSeconds(),
+    millisecond: fakeDate.getUTCMilliseconds(),
+    timeZoneName: abbrv,
+    timeZoneOffset: offset,
+  };
+}
 
+// function formatInternal(t: _Time, layout: string): string {
+function formatInternal(info: _DisplayInfo, layout: string): string {
+  const out: string[] = [];
+  const parts = parseLayout(layout, false);
   const {
+    year,
     month,
+    day,
+    weekday,
     hour,
     minute,
-    fractionalSecond: millis,
-    timeZoneOffset: zoneOffset,
-  } = intlInfo;
+    second,
+    millisecond,
+    timeZoneName,
+    timeZoneOffset,
+  } = info;
+  const zoneOffset = splitDuration(timeZoneOffset);
   const monthIndex = month - 1;
 
   for (const p of parts) {
@@ -714,29 +745,25 @@ function formatInternal(intlInfo: intlInfo, layout: string): string {
         out.push(String(month).padStart(2, "0"));
         break;
       case std.LongWeekDay:
-        out.push(intlInfo.weekday);
+        out.push(weekday);
         break;
       case std.WeekDay:
-        out.push(intlInfo.weekday.substr(0, 3));
+        out.push(weekday.substr(0, 3));
         break;
       case std.Day:
-        out.push(String(intlInfo.day));
+        out.push(String(day));
         break;
       case std.UnderDay:
-        out.push(String(intlInfo.day).padStart(2, " "));
+        out.push(String(day).padStart(2, " "));
         break;
       case std.ZeroDay:
-        out.push(String(intlInfo.day).padStart(2, "0"));
+        out.push(String(day).padStart(2, "0"));
         break;
       case std.UnderYearDay:
-        out.push(
-          String(yearDay(intlInfo.year, month, intlInfo.day)).padStart(3, " "),
-        );
+        out.push(String(yearDay(year, month, day)).padStart(3, " "));
         break;
       case std.ZeroYearDay:
-        out.push(
-          String(yearDay(intlInfo.year, month, intlInfo.day)).padStart(3, "0"),
-        );
+        out.push(String(yearDay(year, month, day)).padStart(3, "0"));
         break;
       case std.Hour:
         out.push(String(hour).padStart(2, "0"));
@@ -754,16 +781,16 @@ function formatInternal(intlInfo: intlInfo, layout: string): string {
         out.push(String(minute).padStart(2, "0"));
         break;
       case std.Second:
-        out.push(String(intlInfo.second));
+        out.push(String(second));
         break;
       case std.ZeroSecond:
-        out.push(String(intlInfo.second).padStart(2, "0"));
+        out.push(String(second).padStart(2, "0"));
         break;
       case std.LongYear:
-        out.push(String(intlInfo.year));
+        out.push(String(year));
         break;
       case std.Year:
-        out.push(String(intlInfo.year).substring(2));
+        out.push(String(year).substring(2));
         break;
       case std.PM:
         out.push(hour >= 12 ? "PM" : "AM");
@@ -772,70 +799,69 @@ function formatInternal(intlInfo: intlInfo, layout: string): string {
         out.push(hour >= 12 ? "pm" : "am");
         break;
       case std.TZ:
-        if (intlInfo.timeZoneName !== "") {
-          out.push(intlInfo.timeZoneName);
+        if (timeZoneName.length > 0) {
+          out.push(timeZoneName);
         } else {
           // No time zone known for this time, but we must print one.
           // Use the -0700 format.
-          out.push(zoneOffset.negative ? "-" : "+");
+          out.push(zoneOffset.sign < 0 ? "-" : "+");
           out.push(String(zoneOffset.hours).padStart(2, "0"));
           out.push(String(zoneOffset.minutes).padStart(2, "0"));
         }
         break;
       case std.ISO8601TZ:
-        if (isZero(zoneOffset)) {
+        if (timeZoneOffset === 0) {
           out.push("Z");
           break;
         }
       // fallthrough
       case std.NumTZ:
-        out.push(zoneOffset.negative ? "-" : "+");
+        out.push(zoneOffset.sign < 0 ? "-" : "+");
         out.push(String(zoneOffset.hours).padStart(2, "0"));
         out.push(String(zoneOffset.minutes).padStart(2, "0"));
         break;
       case std.ISO8601SecondsTZ:
-        if (isZero(zoneOffset)) {
+        if (timeZoneOffset === 0) {
           out.push("Z");
           break;
         }
       // fallthrough
       case std.NumSecondsTZ:
-        out.push(zoneOffset.negative ? "-" : "+");
+        out.push(zoneOffset.sign < 0 ? "-" : "+");
         out.push(String(zoneOffset.hours).padStart(2, "0"));
         out.push(String(zoneOffset.minutes).padStart(2, "0"));
         out.push(String(zoneOffset.seconds).padStart(2, "0"));
         break;
       case std.ISO8601ShortTZ:
-        if (isZero(zoneOffset)) {
+        if (timeZoneOffset === 0) {
           out.push("Z");
           break;
         }
       // fallthrough
       case std.NumShortTZ:
-        out.push(zoneOffset.negative ? "-" : "+");
+        out.push(zoneOffset.sign < 0 ? "-" : "+");
         out.push(String(zoneOffset.hours).padStart(2, "0"));
         break;
       case std.ISO8601ColonTZ:
-        if (isZero(zoneOffset)) {
+        if (timeZoneOffset === 0) {
           out.push("Z");
           break;
         }
       // fallthrough
       case std.NumColonTZ:
-        out.push(zoneOffset.negative ? "-" : "+");
+        out.push(zoneOffset.sign < 0 ? "-" : "+");
         out.push(String(zoneOffset.hours).padStart(2, "0"));
         out.push(":");
         out.push(String(zoneOffset.minutes).padStart(2, "0"));
         break;
-
       case std.ISO8601ColonSecondsTZ:
-        if (isZero(zoneOffset)) {
+        if (timeZoneOffset === 0) {
           out.push("Z");
           break;
         }
       //fallthroguh
       case std.NumColonSecondsTZ:
-        out.push(zoneOffset.negative ? "-" : "+");
+        out.push(zoneOffset.sign < 0 ? "-" : "+");
         out.push(String(zoneOffset.hours).padStart(2, "0"));
         out.push(":");
         out.push(String(zoneOffset.minutes).padStart(2, "0"));
@@ -843,10 +869,10 @@ function formatInternal(intlInfo: intlInfo, layout: string): string {
         out.push(String(zoneOffset.seconds).padStart(2, "0"));
         break;
       case std.FracSecond0 /* fallthrough */:
-        out.push(fracSecondsStr(p, millis));
+        out.push(fracSecondsStr(p, millisecond));
         break;
       case std.FracSecond9:
-        const fracS = fracSecondsStr(p, millis);
+        const fracS = fracSecondsStr(p, millisecond);
         if (fracS.length === 0) {
           out.pop(); // remove the comma/period.
           break;
@@ -866,14 +892,8 @@ function parseInternal(
   layout: string,
   value: string,
   defaultLocation: IANA,
-): TimePrivate {
+): _Time {
   const parts = parseLayout(layout, true);
-  // console.log(
-  //   parts.map(p => {
-  //     if (typeof p === "string") return p;
-  //     return std[p & std.MaskLower];
-  //   })
-  // );
 
   let year = 0,
     month = -1,
@@ -1247,26 +1267,14 @@ function parseInternal(
   }
 
   if (zoneOffsetHr !== 0 || zoneOffsetMin !== 0 || zoneOffsetSec !== 0) {
-    // const offsetSec =
-    //   zoneOffsetSign * (zoneOffsetHr * 60 + zoneOffsetMin) * 60 + zoneOffsetSec;
-    const t = _DateAt(
-      year,
-      month,
-      day,
-      hour,
-      minute,
-      second,
-      // second - offsetSec,
-      milli,
-      UTC,
-    );
-    t._setTZAbbr(tzString);
-    t._setTZoffset(zoneOffsetSign, zoneOffsetHr, zoneOffsetMin, zoneOffsetSec);
-    return t;
+    const offsetSec =
+      zoneOffsetSign * (zoneOffsetHr * 60 + zoneOffsetMin) * 60 + zoneOffsetSec;
+    const loc = new _FixedLocation(tzString, offsetSec * Second);
+    return _DateAtLocation(year, month, day, hour, minute, second, milli, loc);
   }
 
   if (tzString.length > 0) {
-    let t = _DateAt(
+    const t = _DateAtLocation(
       year,
       month,
       day,
@@ -1274,26 +1282,14 @@ function parseInternal(
       minute,
       second,
       milli,
-      defaultLocation,
+      UTCLocation,
     );
+    let offset = 0;
     if (tzString.length > 3 && tzString.substring(0, 3) === "GMT") {
-      let offset = throwInvalidNumber(tzString.substring(3), tzString); // like GMT-8, GMT+8
-      offset *= 3600;
-      t = t.Add(offset * Second) as TimePrivate;
-      const [oh, om, os] = secondsToHMS(Math.abs(offset));
-      zoneOffsetHr = oh;
-      zoneOffsetMin = om;
-      zoneOffsetSec = os;
-      if (offset < 0) zoneOffsetSign = -1;
-      t._setTZoffset(
-        zoneOffsetSign,
-        zoneOffsetHr,
-        zoneOffsetMin,
-        zoneOffsetSec,
-      );
+      offset = throwInvalidNumber(tzString.substring(3), tzString); // like GMT-8, GMT+8
     }
-    t._setTZAbbr(tzString);
-    return t;
+    const loc = new _FixedLocation(tzString, offset * Hour);
+    return new _Time(t.UnixMilli(), loc);
   }
 
   return _DateAt(
@@ -1306,15 +1302,6 @@ function parseInternal(
     milli,
     defaultLocation,
   );
-}
-
-function secondsToHMS(
-  totalSeconds: number,
-): [hours: number, minutes: number, seconds: number] {
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
-  return [hours, minutes, seconds];
 }
 
 function daysBefore(m: Month): number {
@@ -1916,4 +1903,30 @@ function throwInvalidNumber(str: string, name: string): number {
   if (!isValidNumber(str))
     throw new Error(`'${str}' not a valid number for ${name}`);
   return Number(str);
+}
+
+function splitDuration(ms: Duration): {
+  sign: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  milliseconds: number;
+} {
+  const sign = ms < 0 ? -1 : 1;
+  ms = Math.abs(ms);
+
+  const hours = Math.trunc(ms / Hour);
+  ms %= Hour;
+  const minutes = Math.trunc(ms / Minute);
+  ms %= Minute;
+  const seconds = Math.trunc(ms / Second);
+  ms %= Second;
+
+  return {
+    sign,
+    hours,
+    minutes,
+    seconds,
+    milliseconds: ms,
+  };
 }

@@ -3,3 +3,4 @@ Notes.txt
 scripts/
 tmp
 *.tgz
+out/

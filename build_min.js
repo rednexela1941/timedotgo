@@ -25,7 +25,7 @@ async function main() {
     splitting: false,
     sourcemap: false,
     format: "esm",
-    target: "es2020",
+    target: "esnext",
     outdir: "./out/",
     banner: {
       js: `/** ${BannerString} **/`,

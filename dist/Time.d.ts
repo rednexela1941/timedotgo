@@ -167,6 +167,18 @@ export declare enum Month {
     December = 12
 }
 /**
+ * A Weekday specifies a day of the week (Sunday = 0, ...).
+ */
+export declare enum Weekday {
+    Sunday = 0,
+    Monday = 1,
+    Tuesday = 2,
+    Wednesday = 3,
+    Thursday = 4,
+    Friday = 5,
+    Saturday = 6
+}
+/**
  * A Time represents an instant in time with millisecond precision.
  */
 export interface Time {
@@ -191,6 +203,10 @@ export interface Time {
         month: Month;
         day: number;
     };
+    /**
+     * Weekday returns the day of the week specified by t.
+     */
+    Weekday(): Weekday;
     /**
      * YearDay returns the day of the year specified by t, in the range [1,365] for
      * non-leap years, and [1,366] in leap years.

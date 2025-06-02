@@ -4,7 +4,9 @@ Golang's [time](https://pkg.go.dev/time) is excellent. This is a small,
 close-as-reasonable port of the API to typescript with full support
 for time zone conversions, parsing and formatting.
 
-[Documentation](https://rednexela1941.github.io/timedotgo/)
+- [GitHub](https://github.com/rednexela1941/timedotgo)
+- [Documentation](https://rednexela1941.github.io/timedotgo/)
+
 
 # Installation
 
@@ -35,10 +37,10 @@ console.log("Berlin:", berlin.Format(format));
 
 ```
 Right now, it is:
-Local: Thursday May 29 04:54:02.331 PM -04:00:00
-UTC: Thursday May 29 08:54:02.331 PM +00:00:00
-California: Thursday May 29 01:54:02.331 PM -07:00:00
-Berlin: Thursday May 29 10:54:02.331 PM +02:00:00
+Local: Monday June 02 02:47:53.750 PM -04:00:00
+UTC: Monday June 02 06:47:53.750 PM +00:00:00
+California: Monday June 02 11:47:53.750 AM -07:00:00
+Berlin: Monday June 02 08:47:53.750 PM +02:00:00
 ```
 
 ## Parsing 
@@ -100,7 +102,7 @@ console.log(
 ### Output
 
 ```
-It has been 1748552042417 milliseconds since the creation of unix.
-And we only have 18113773508 milliseconds until Christmas morning.
+It has been 1748890073831 milliseconds since the creation of unix.
+And we only have 17775742093 milliseconds until Christmas morning.
 ```
 

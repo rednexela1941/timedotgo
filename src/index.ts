@@ -1,5 +1,6 @@
 export {
   Month,
+  Weekday,
   Time,
   Local,
   UTC,

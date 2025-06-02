@@ -12,7 +12,9 @@ Golang's [time](https://pkg.go.dev/time) is excellent. This is a small,
 close-as-reasonable port of the API to typescript with full support
 for time zone conversions, parsing and formatting.
 
-[Documentation](https://rednexela1941.github.io/timedotgo/)
+- [GitHub](https://github.com/rednexela1941/timedotgo)
+- [Documentation](https://rednexela1941.github.io/timedotgo/)
+
 
 # Installation
 
