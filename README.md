@@ -37,10 +37,10 @@ console.log("Berlin:", berlin.Format(format));
 
 ```
 Right now, it is:
-Local: Monday June 02 02:47:53.750 PM -04:00:00
-UTC: Monday June 02 06:47:53.750 PM +00:00:00
-California: Monday June 02 11:47:53.750 AM -07:00:00
-Berlin: Monday June 02 08:47:53.750 PM +02:00:00
+Local: Tuesday June 03 12:15:03.191 PM -04:00:00
+UTC: Tuesday June 03 04:15:03.191 PM +00:00:00
+California: Tuesday June 03 09:15:03.191 AM -07:00:00
+Berlin: Tuesday June 03 06:15:03.191 PM +02:00:00
 ```
 
 ## Parsing 
@@ -102,7 +102,7 @@ console.log(
 ### Output
 
 ```
-It has been 1748890073831 milliseconds since the creation of unix.
-And we only have 17775742093 milliseconds until Christmas morning.
+It has been 1748967303281 milliseconds since the creation of unix.
+And we only have 17698512643 milliseconds until Christmas morning.
 ```
 
